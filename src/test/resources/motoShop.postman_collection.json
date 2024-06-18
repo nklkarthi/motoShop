@@ -1,0 +1,1234 @@
+{
+	"info": {
+		"_postman_id": "510d8b2d-6452-4c05-8071-69a0f6f49f3c",
+		"name": "motoShop",
+		"description": "motoShop - Java Pet project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22591207"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "valid_parameters",
+					"item": [
+						{
+							"name": "login",
+							"item": [
+								{
+									"name": "login_user_role",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"username\": \"user\",\n\t\"password\": \"user\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}authentication/login",
+											"host": [
+												"{{base_url}}authentication"
+											],
+											"path": [
+												"login"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "login_sales_role",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"username\": \"sales\",\n\t\"password\": \"sales\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}authentication/login",
+											"host": [
+												"{{base_url}}authentication"
+											],
+											"path": [
+												"login"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "login_admin_role",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"username\": \"admin\",\n\t\"password\": \"admin\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}authentication/login",
+											"host": [
+												"{{base_url}}authentication"
+											],
+											"path": [
+												"login"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "register",
+							"item": [
+								{
+									"name": "register_user_role",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"username\": \"sidney\",\n  \"password\": \"123\",\n  \"email\": \"sidney@icloud.com\",\n  \"firstName\": \"Sidney\",\n  \"lastName\": \"Prescott\",\n  \"positionAtCompany\": \"Receptionist\",\n  \"role\": {\n    \"id\": 1,\n    \"name\": \"User\",\n    \"permissions\": [\n      {\n        \"id\": 1,\n        \"name\": \"Read\"\n      }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}authentication/register",
+											"host": [
+												"{{base_url}}authentication"
+											],
+											"path": [
+												"register"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "register_sales_role",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"username\": \"brigi\",\n  \"password\": \"456\",\n  \"email\": \"brigi@icloud.com\",\n  \"firstName\": \"Brigi\",\n  \"lastName\": \"Kiss\",\n  \"positionAtCompany\": \"Sales manager\",\n  \"role\": {\n    \"id\": 2,\n    \"name\": \"Sales\",\n    \"permissions\": [\n      {\n        \"id\": 1,\n        \"name\": \"Read\"\n      },\n      {\n        \"id\": 2,\n        \"name\": \"Create\"\n      },\n      {\n        \"id\": 3,\n        \"name\": \"Update\"\n      }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}authentication/register",
+											"host": [
+												"{{base_url}}authentication"
+											],
+											"path": [
+												"register"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "register_admin_role",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"username\": \"steve\",\n  \"password\": \"789\",\n  \"email\": \"steve@icloud.com\",\n  \"firstName\": \"Steve\",\n  \"lastName\": \"Bardos\",\n  \"positionAtCompany\": \"Store manager\",\n  \"role\": {\n    \"id\": 3,\n    \"name\": \"Admin\",\n    \"permissions\": [\n      {\n        \"id\": 1,\n        \"name\": \"Read\"\n      },\n      {\n        \"id\": 2,\n        \"name\": \"Create\"\n      },\n      {\n        \"id\": 3,\n        \"name\": \"Update\"\n      },\n      {\n        \"id\": 4,\n        \"name\": \"Delete\"\n      }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}authentication/register",
+											"host": [
+												"{{base_url}}authentication"
+											],
+											"path": [
+												"register"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "invalid_parameters",
+					"item": [
+						{
+							"name": "login",
+							"item": [
+								{
+									"name": "login_empty_body",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}authentication/login",
+											"host": [
+												"{{base_url}}authentication"
+											],
+											"path": [
+												"login"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "login_invalid_user",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"admin\",\n  \"password\": \"admin\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}authentication/login",
+											"host": [
+												"{{base_url}}authentication"
+											],
+											"path": [
+												"login"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "register",
+							"item": [
+								{
+									"name": "register_invalid_user",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"username\": \"steve\",\n  \"password\": \"123\",\n  \"email\": \"steve@icloud.com\",\n  \"firstName\": \"Steve\",\n  \"lastName\": \"Bardos\",\n  \"positionAtCompany\": \"Sales manager\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}authentication/register",
+											"host": [
+												"{{base_url}}authentication"
+											],
+											"path": [
+												"register"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "register_empty_body",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}authentication/register",
+											"host": [
+												"{{base_url}}authentication"
+											],
+											"path": [
+												"register"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Manufacturer",
+			"item": [
+				{
+					"name": "valid_parameters",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Ducati\",\n\t\"country\": \"Italy\",\n\t\"partnerSince\": \"2022-12-16\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}service/manufacturer/add",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"manufacturer",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/manufacturer/get/6",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"manufacturer",
+										"get",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/manufacturer/get/all",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"manufacturer",
+										"get",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\" : 1,\n\t\"name\": \"BMW International\",\n\t\"country\": \"Germany\",\n\t\"partnerSince\": \"2022-12-16\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}service/manufacturer/update",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"manufacturer",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/manufacturer/delete/5",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"manufacturer",
+										"delete",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "invalid_parameters",
+					"item": [
+						{
+							"name": "add_invalid_json",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": 40,\n\t\"count\": \"Italy\",\n\t\"partner_since\": \"2022-12-16\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}service/manufacturer/add",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"manufacturer",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_invalid_id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/manufacturer/get/55",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"manufacturer",
+										"get",
+										"55"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAll_invalid_url",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/manufacturer/get/allInvalid",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"manufacturer",
+										"get",
+										"allInvalid"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_invalid_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\" : 111,\n\t\"name\": \"BMW International\",\n\t\"country\": \"Germany\",\n\t\"partnerSince\": \"2022-12-16\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}service/manufacturer/update",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"manufacturer",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_invalid_json",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\" : 1,\n\t\"name\": \"BMW International\",\n\t\"country\": \"Germany\",\n\t\"partnerSince\": \"bad_date_format\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}service/manufacturer/update",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"manufacturer",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_invalid_id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/manufacturer/delete/33",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"manufacturer",
+										"delete",
+										"33"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_invalid_foreignKeyViolation",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/manufacturer/delete/1",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"manufacturer",
+										"delete",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "This folder is for testing Manufacturer model related APIs."
+		},
+		{
+			"name": "MotorcycleModel",
+			"item": [
+				{
+					"name": "valid_parameters",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"manufacturer\": {\n\t\t\"id\": 6,\n\t\t\"name\": \"Suzuki\",\n\t\t\"country\": \"Japan\",\n\t\t\"partnerSince\": \"2002-06-01\"\n\t},\n\t\"modelName\": \"GSX-R 1000 30th Anniversary Edition\",\n\t\"modelYear\": 2016,\n\t\"weight\": 203,\n\t\"displacement\": 999,\n\t\"horsePower\": 183,\n\t\"topSpeed\": 299,\n\t\"gearbox\": 6,\n\t\"fuelCapacity\": 17.5,\n\t\"fuelConsumptionPer100Kms\": 8.52,\n\t\"motorcycleModelType\": \"SUPERSPORT\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/model/add",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"model",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/model/get/1",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"model",
+										"get",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getMotorcycleTypes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/model/get/types",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"model",
+										"get",
+										"types"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/model/get/all",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"model",
+										"get",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 7,\n\t\"manufacturer\": {\n\t\t\"id\": 6,\n\t\t\"name\": \"Suzuki\",\n\t\t\"country\": \"Japan\",\n\t\t\"partnerSince\": \"2002-06-01\"\n\t},\n\t\"modelName\": \"V-Strom 1050\",\n\t\"modelYear\": 2023,\n\t\"weight\": 252,\n\t\"displacement\": 1037,\n\t\"horsePower\": 100,\n\t\"topSpeed\": 189,\n\t\"gearbox\": 6,\n\t\"fuelCapacity\": 20.0,\n\t\"fuelConsumptionPer100Kms\": 3.70,\n\t\"motorcycleModelType\": \"TOURING_ENDURO\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/model/update",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"model",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/model/delete/6",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"model",
+										"delete",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "invalid_parameters",
+					"item": [
+						{
+							"name": "add_invalid_json",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"model\": \"GSX 1000\",\n\t\"modelYear\": \"2016\",\n\t\"weight\": 203,\n\t\"displacement\": 999,\n\t\"horsePower\": 183,\n\t\"topSpeed\": 299,\n\t\"gearbox\": 6,\n\t\"fuelCapacity\": 17.5,\n\t\"fuelConsumptionPer100Kms\": 8.52,\n\t\"motorcycleModelType\": 400\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/model/add",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"model",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_invalid_id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/model/get/55",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"model",
+										"get",
+										"55"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAll_invalid_url",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/model/get/allInvalid",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"model",
+										"get",
+										"allInvalid"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_invalid_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 777,\n\t\"manufacturer\": {\n\t\t\"id\": 6,\n\t\t\"name\": \"Suzuki\",\n\t\t\"country\": \"Japan\",\n\t\t\"partnerSince\": \"2002-06-01\"\n\t},\n\t\"modelName\": \"V-Strom 1050\",\n\t\"modelYear\": 2023,\n\t\"weight\": 252,\n\t\"displacement\": 1037,\n\t\"horsePower\": 100,\n\t\"topSpeed\": 189,\n\t\"gearbox\": 6,\n\t\"fuelCapacity\": 20.0,\n\t\"fuelConsumptionPer100Kms\": 3.70,\n\t\"motorcycleModelType\": \"TOURING_ENDURO\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/model/update",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"model",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_invalid_json",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 7,\n\t\"manufacturer\": {\n\t\t\"invalid\": \"invalid\",\n\t\t\"name\": \"Suzuki\",\n\t\t\"country\": \"Japan\",\n\t\t\"partnerSince\": \"2002-06-01\"\n\t},\n\t\"modelName\": \"V-Strom 1050\",\n\t\"modelYear\": 2023,\n\t\"weight\": 252,\n\t\"displacement\": 1037,\n\t\"horsePower\": 100,\n\t\"topSpeed\": 189,\n\t\"gearbox\": 6,\n\t\"fuelCapacity\": 20.0,\n\t\"fuelConsumptionPer100Kms\": 3.70,\n\t\"motorcycleModelType\": \"TOURING_ENDURO\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/model/update",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"model",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_invalid_id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/model/delete/99",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"model",
+										"delete",
+										"99"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_invalid_foreignKey",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/model/delete/7",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"model",
+										"delete",
+										"7"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "This folder is for testing Motorcycle model related APIs."
+		},
+		{
+			"name": "MotorcycleStock",
+			"item": [
+				{
+					"name": "valid_parameters",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"motorcycleModel\": {\n\t\t\"id\": 7,\n\t\t\"manufacturer\": {\n\t\t\t\"id\": 6,\n\t\t\t\"name\": \"Suzuki\",\n\t\t\t\"country\": \"Japan\",\n\t\t\t\"partnerSince\": \"2002-06-01\"\n\t\t},\n\t\t\"modelName\": \"V-Strom 1050DE Adventure\",\n\t\t\"modelYear\": 2023,\n\t\t\"weight\": 252,\n\t\t\"displacement\": 1037,\n\t\t\"horsePower\": 100,\n\t\t\"topSpeed\": 189,\n\t\t\"gearbox\": 6,\n\t\t\"fuelCapacity\": 20.0,\n\t\t\"fuelConsumptionPer100Kms\": 3.99,\n\t\t\"motorcycleModelType\": \"TOURING_ENDURO\"\n\t},\n\t\"mileage\": 0,\n\t\"purchasingPrice\": 15300,\n\t\"profitMargin\": 0.15,\n\t\"inStock\": 3,\n\t\"color\": \"Metallic Matte Sword Silver\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/stock/add",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"stock",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/stock/get/8",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"stock",
+										"get",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/stock/get/all",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"stock",
+										"get",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 8,\n\t\"motorcycleModel\": {\n\t\t\"id\": 7,\n\t\t\"manufacturer\": {\n\t\t\t\"id\": 6,\n\t\t\t\"name\": \"Suzuki\",\n\t\t\t\"country\": \"Japan\",\n\t\t\t\"partnerSince\": \"2002-06-01\"\n\t\t},\n\t\t\"modelName\": \"V-Strom 1050DE Adventure\",\n\t\t\"modelYear\": 2023,\n\t\t\"weight\": 252,\n\t\t\"displacement\": 1037,\n\t\t\"horsePower\": 100,\n\t\t\"topSpeed\": 189,\n\t\t\"gearbox\": 6,\n\t\t\"fuelCapacity\": 20.0,\n\t\t\"fuelConsumptionPer100Kms\": 3.99,\n\t\t\"motorcycleModelType\": \"TOURING_ENDURO\"\n\t},\n\t\"mileage\": 0,\n\t\"purchasingPrice\": 15300,\n\t\"profitMargin\": 0.2,\n\t\"inStock\": 2,\n\t\"color\": \"Unbelievably white and blue and black\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/stock/update",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"stock",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/stock/delete/9",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"stock",
+										"delete",
+										"9"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "invalid_parameters",
+					"item": [
+						{
+							"name": "add_invalid_json",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"motorcycleModel\": {\n\t\t\"id\": 7,\n\t\t\"manufacturer\": {\n\t\t\t\"id\": 6,\n\t\t\t\"name\": \"Suzuki\",\n\t\t\t\"country\": \"Japan\",\n\t\t\t\"partnerSince\": \"2002-06-01\"\n\t\t},\n\t\t\"modelName\": \"V-Strom 1050DE Adventure\",\n\t\t\"modelYear\": 2023,\n\t\t\"weight\": 252,\n\t\t\"displacement\": 1037,\n\t\t\"horsePower\": 100,\n\t\t\"topSpeed\": 189,\n\t\t\"gearbox\": 6,\n\t\t\"fuelCapacity\": 20.0,\n\t\t\"fuelConsumptionPer100Kms\": 3.99,\n\t\t\"motorcycleModelType\": \"TOURING_ENDURO\"\n\t},\n\t\"mileage\": \"NO_MILEAGE\",\n\t\"purchasingPrice\": 15300,\n\t\"profitMargin\": 0.15,\n\t\"inStock\": 3,\n\t\"color\": \"Metallic Matte Sword Silver\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/stock/add",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"stock",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_invalid_id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/stock/get/55",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"stock",
+										"get",
+										"55"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAll_invalid_url",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/stock/get/allInvalid",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"stock",
+										"get",
+										"allInvalid"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_invalid_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 800,\n\t\"motorcycleModel\": {\n\t\t\"id\": 7,\n\t\t\"manufacturer\": {\n\t\t\t\"id\": 6,\n\t\t\t\"name\": \"Suzuki\",\n\t\t\t\"country\": \"Japan\",\n\t\t\t\"partnerSince\": \"2002-06-01\"\n\t\t},\n\t\t\"modelName\": \"V-Strom 1050DE Adventure\",\n\t\t\"modelYear\": 2023,\n\t\t\"weight\": 252,\n\t\t\"displacement\": 1037,\n\t\t\"horsePower\": 100,\n\t\t\"topSpeed\": 189,\n\t\t\"gearbox\": 6,\n\t\t\"fuelCapacity\": 20.0,\n\t\t\"fuelConsumptionPer100Kms\": 3.99,\n\t\t\"motorcycleModelType\": \"TOURING_ENDURO\"\n\t},\n\t\"mileage\": 0,\n\t\"purchasingPrice\": 15300,\n\t\"profitMargin\": 0.2,\n\t\"inStock\": 2,\n\t\"color\": \"Unbelievably white and blue and black\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/stock/update",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"stock",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_invalid_json",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 8,\n\t\"motorcycleModel\": {\n\t\t\"id\": 7,\n\t\t\"manufacturer\": {\n\t\t\t\"id\": 6,\n\t\t\t\"name\": \"Suzuki\",\n\t\t\t\"country\": \"Japan\",\n\t\t\t\"partnerSince\": \"2002-06-01\"\n\t\t},\n\t\t\"modelName\": \"V-Strom 1050DE Adventure\",\n\t\t\"modelYear\": 2023,\n\t\t\"weight\": 252,\n\t\t\"displacement\": 1037,\n\t\t\"horsePower\": 100,\n\t\t\"topSpeed\": 189,\n\t\t\"gearbox\": 6,\n\t\t\"fuelCapacity\": 20.0,\n\t\t\"fuelConsumptionPer100Kms\": 3.99,\n\t\t\"motorcycleModelType\": \"TOURING_ENDURO\"\n\t},\n\t\"mileage\": 0,\n\t\"purchasingPrice\": 15300,\n\t\"profitMargin\": 0.2,\n\t\"inStock\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/stock/update",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"stock",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_invalid_id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}service/motorcycle/stock/delete/99",
+									"host": [
+										"{{base_url}}service"
+									],
+									"path": [
+										"motorcycle",
+										"stock",
+										"delete",
+										"99"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "This folder is for testing Motorcycle model related APIs."
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080/",
+			"type": "string"
+		}
+	]
+}

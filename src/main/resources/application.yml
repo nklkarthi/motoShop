@@ -1,0 +1,34 @@
+spring:
+
+  datasource:
+    url: ${MOTOSHOP_DB_URL}
+    username: ${MOTOSHOP_DB_USER}
+    password: ${MOTOSHOP_DB_PASS}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    open-in-view: true
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: none
+
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+
+logging:
+  level:
+    org.springframework.security: debug
+
+
+# Secret values for JwtService configuration class.
+application:
+  security:
+    jwt:
+      # noinspection SpellCheckingInspection,SpellCheckingInspection,SpellCheckingInspection,SpellCheckingInspection,SpellCheckingInspection
+      secret-key: ${MOTOSHOP_SECRET_KEY}
+      expiration: 28800000 # 8 hours, as one working day
