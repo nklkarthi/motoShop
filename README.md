@@ -1,6 +1,6 @@
 # motoShop - 3-Tier Web + API + DB Application repository.
 
-## Infra Setup - [nklkarthi/tf-aws-iac-3tier](https://github.com/nklkarthi/tf-aws-iac-3tier/) repository
+## Infra Setup - [tf-aws-iac-3tier](https://github.com/nklkarthi/tf-aws-iac-3tier/) repository
 
 ## Frontend 
 
