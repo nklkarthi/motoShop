@@ -3,7 +3,6 @@ name: CI pipeline for Java back-end and ReactJS front-end
 on:
   push:
   pull_request:
-
   workflow_dispatch:
 
 jobs:
