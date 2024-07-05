@@ -1,0 +1,52 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18 # Specify the runtime version of Node.js
+      java: corretto-17 # Specify the runtime version of Java (Corretto 17 for Spring Boot)
+    commands:
+    - echo Installing frontend dependencies...
+    - cd src/main/ui && npm install && cd ../../..
+    - echo Installing backend dependencies...
+    - ./mvnw dependency:resolve
+  pre_build:
+    commands:
+    - echo Running frontend tests...
+    - cd src/main/ui && npm test && cd ../../..
+    - echo Running backend tests...
+    - ./mvnw test
+  build:
+    commands:
+    - echo Building frontend...
+    - cd src/main/ui && npm run build && cd ../../..
+    - echo Building backend...
+    - ./mvnw package -DskipTests
+    - echo Packaging the application...
+    - zip -r frontend.zip ./src/main/ui/build
+    - zip -r backend.zip ./target/*.jar
+    - echo Build completed on `date`
+  post_build:
+    commands:
+    - echo Uploading build artifacts to S3...
+    - aws s3 cp frontend.zip s3://$ARTIFACT_BUCKET/frontend.zip
+    - aws s3 cp backend.zip s3://$ARTIFACT_BUCKET/backend.zip
+    - echo Build artifacts uploaded successfully
+    - echo Starting deployment...
+    - aws deploy create-deployment --application-name $APPLICATION_NAME --deployment-group-name $FRONTEND_DEPLOYMENT_GROUP --s3-location bucket=$ARTIFACT_BUCKET,bundleType=zip,key=frontend.zip --file-exists-behavior OVERWRITE
+    - aws deploy create-deployment --application-name $APPLICATION_NAME --deployment-group-name $BACKEND_DEPLOYMENT_GROUP --s3-location bucket=$ARTIFACT_BUCKET,bundleType=zip,key=backend.zip --file-exists-behavior OVERWRITE
+artifacts:
+  files:
+  - frontend.zip
+  - backend.zip
+  discard-paths: yes
+cache:
+  paths:
+  - frontend/node_modules/**/*
+  - backend/.m2/repository/**/*
+env:
+  variables:
+    ARTIFACT_BUCKET: "your-artifact-bucket-name" # replace with your actual S3 bucket name
+    APPLICATION_NAME: "your-codedeploy-application-name" # replace with your CodeDeploy application name
+    FRONTEND_DEPLOYMENT_GROUP: "your-frontend-codedeploy-deployment-group-name" # replace with your CodeDeploy frontend deployment group name
+    BACKEND_DEPLOYMENT_GROUP: "your-backend-codedeploy-deployment-group-name" # replace with your CodeDeploy backend deployment group name
